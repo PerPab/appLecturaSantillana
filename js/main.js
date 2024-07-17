@@ -4,6 +4,8 @@ const modal_general = document.getElementById('modal-general-texto');
 const modal_texto = document.getElementById('modal-secundario-texto');
 const btn_cerrar_titulos = document.getElementById('cerrar-modal-principal');
 const btn_cerrar_texto = document.getElementById('cerrar-modal-secundario');
+const btn_comenzar = document.getElementById('btn-comienzo');
+const audio = document.getElementById('audio');
 
 btn_cerrar_titulos.addEventListener('click', () => {
     modal_general.close();
@@ -12,6 +14,74 @@ btn_cerrar_titulos.addEventListener('click', () => {
 btn_cerrar_texto.addEventListener('click', () => {
     modal_texto.close();
 })
+
+
+
+let puede_grabar = false;
+let grabando = false;
+let grabacion = null;
+let chunks = [];
+
+
+
+
+setupAudio()
+
+
+function SetupStream(stream) {
+    console.log('setup stream')
+    grabacion = new MediaRecorder(stream);
+    grabacion.ondataavailable = e => {
+        chunks.push(e.data);
+    }
+
+    grabacion.onstop = e => {
+        const blob = new Blob(chunks, { type: "audio/mp3; codecs=opus" });
+        chunks = [];
+        const audioURL = window.URL.createObjectURL(blob);
+        console.log(audioURL)
+        audio.src = audioURL;
+    }
+}
+
+function setupAudio() {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
+            audio: true
+        })
+            .then(SetupStream)
+            .catch(err => {
+                console.log(err)
+            })
+    }
+    puede_grabar = true;
+}
+
+
+function grabar() {
+    if (!puede_grabar) return;
+    grabando = !grabando;
+
+    if (grabando) {
+        console.log('grabando')
+        grabacion.start();
+
+        setTimeout(() => {
+            grabacion.stop();
+            console.log('deteniendo')
+        }, 3000);
+        setTimeout(() => {
+            console.log('descargando')
+            descarga.download = 'prueba.mp3'
+            descarga.href = audioURL;
+        }, 7000);
+    } else {
+        //grabacion.stop();
+        //cambiar btn a brabar
+    }
+}
+
+
 
 
 function plantillaTitulo(data) {
@@ -74,3 +144,9 @@ document.getElementById('btn-110').addEventListener('click', () => {
 document.getElementById('btn-130').addEventListener('click', () => {
     renderizarTitulos(text_130);
 })
+
+document.getElementById('btn-comienzo').addEventListener('click', () => {
+    console.log('click')
+    grabar()
+})
+
