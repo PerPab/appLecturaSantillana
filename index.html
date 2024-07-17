@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="./bootstrap/js/bootstrap.js"></script>
+    <title>Velocidad Lectora</title>
+</head>
+
+<body>
+
+    <div class="contenedor-principal container-fluid">
+
+        <div class="menu-botones">
+            <h4 class="titulo-menu">Selecciona tu edad</h4>
+            <button id="btn-64" class="btn btn-primary">64 Palabras</button>
+            <button id="btn-90" class="btn btn-primary">90 Palabras</button>
+            <button id="btn-110" class="btn btn-primary">110 Palabras</button>
+            <button id="btn-130" class="btn btn-primary">130 Palabras</button>
+        </div>
+
+        <dialog class="modal-general-texto" id="modal-general-texto">
+            <div class="container">
+                <button id="cerrar-modal-principal" class="btn btn-primary">Volver</button>
+
+            </div>
+
+            <div id="contenedor-titulos" class="lista-titulos">
+
+            </div>
+
+
+        </dialog>
+
+        <dialog class="modal-secundario-texto" id="modal-secundario-texto">
+            <div class="container">
+                <button id="cerrar-modal-secundario" class="btn btn-primary">Volver</button>
+            </div>
+
+            <div id="contenedor-texto" class="lista-texto">
+
+            </div>
+
+
+        </dialog>
+
+
+    </div>
+
+
+
+
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
