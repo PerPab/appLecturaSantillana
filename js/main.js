@@ -4,8 +4,8 @@ const modal_general = document.getElementById('modal-general-texto');
 const modal_texto = document.getElementById('modal-secundario-texto');
 const btn_cerrar_titulos = document.getElementById('cerrar-modal-principal');
 const btn_cerrar_texto = document.getElementById('cerrar-modal-secundario');
-const btn_comenzar = document.getElementById('btn-comienzo');
 const audio = document.getElementById('audio');
+const downloadLink = document.getElementById('downloadLink');
 
 btn_cerrar_titulos.addEventListener('click', () => {
     modal_general.close();
@@ -40,7 +40,9 @@ function SetupStream(stream) {
         chunks = [];
         const audioURL = window.URL.createObjectURL(blob);
         console.log(audioURL)
-        audio.src = audioURL;
+        //audio.src = audioURL;
+        downloadLink.href = audioURL;
+        downloadLink.style.display = 'block';
     }
 }
 
@@ -72,8 +74,7 @@ function grabar() {
         }, 3000);
         setTimeout(() => {
             console.log('descargando')
-            descarga.download = 'prueba.mp3'
-            descarga.href = audioURL;
+            downloadLink.download = 'prueba.mp3'
         }, 7000);
     } else {
         //grabacion.stop();
