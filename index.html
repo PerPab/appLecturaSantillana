@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./css/estilo.css">
     <script src="./bootstrap/js/bootstrap.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.js"></script>
     <title>Velocidad Lectora</title>
 </head>
 
@@ -16,20 +17,26 @@
     <div class="contenedor-principal container-fluid">
 
         <div class="menu-botones">
-            <h4 class="titulo-menu">Selecciona tu edad</h4>
-            <button id="btn-64" class="btn btn-primary">64 Palabras</button>
-            <button id="btn-90" class="btn btn-primary">90 Palabras</button>
-            <button id="btn-110" class="btn btn-primary">110 Palabras</button>
-            <button id="btn-130" class="btn btn-primary">130 Palabras</button>
+            <div>
+                <h4 class="titulo-menu">Selecciona tu edad</h4>
+            </div>
+            <div class="container container-btn">
+                <button id="a_6_8" class=" btn-edad">6 a 8 años</button>
+                <button id="a_8_10" class=" btn-edad">8 a 10 años</button>
+                <button id="a_10_12" class=" btn-edad">10 a 12 años</button>
+            </div>
+
         </div>
 
-        <dialog class="modal-general-texto" id="modal-general-texto">
+        <dialog class="modal-general-texto container-fluid" id="modal-general-texto">
+
             <div class="container">
-                <button id="cerrar-modal-principal" class="btn btn-primary">Volver</button>
+                <img src="./img/left_icon.png" id="cerrar-modal-principal" class="img-volver">
 
             </div>
 
             <div id="contenedor-titulos" class="lista-titulos">
+
 
             </div>
 
@@ -38,7 +45,7 @@
 
         <dialog class="modal-secundario-texto" id="modal-secundario-texto">
             <div class="container">
-                <button id="cerrar-modal-secundario" class="btn btn-primary">Volver</button>
+                <img src="./img/left_icon.png" id="cerrar-modal-secundario" class="img-volver">
             </div>
 
             <div id="contenedor-texto" class="lista-texto">
@@ -47,21 +54,13 @@
 
             <div id="container-btn-comenzar" class="container-btn-comenzar">
 
-                <button id="btn-comienzo">Comenzar</button>
-                <!--<audio id="audio" controls></audio>-->
-                <a id="downloadLink" href="" download="grabacion.webm" style="display:none;">Descargar Grabación</a>
+                <button id="btn-comienzo" class="btn btn-success">Comenzar</button>
+                <a id="downloadLink" href="" download="" style="display:none;">Descargar Grabación</a>
             </div>
-
 
         </dialog>
 
-
-
-
     </div>
-
-
-
 
 
     <script type="module" src="./js/main.js"></script>

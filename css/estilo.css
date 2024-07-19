@@ -1,111 +1,205 @@
-.contenedor-principal{
+html {
+    background-color: #b784b8;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor-principal {
     width: 100%;
     height: 100vh;
-    background-color: lightgrey;
+    background-color: #b784b8;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0;
 }
 
-.menu-botones{
-    border: 2px black solid;
+.menu-botones {
+    border: none;
     border-radius: 15px;
-    background-color: whitesmoke;
-    width: 50%;
-    height: 50%;
+    background-color: white;
+    width: 80%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.modal-general-texto{
-    width: 50%;
+.modal-general-texto {
+    width: 80%;
+    height: 90%;
+    border: none;
+    border-radius: 15px;
+
+}
+
+.modal-secundario-texto {
+    width: 80%;
+    height: 90%;
+    border: none;
+    border-radius: 15px;
+}
+
+.contenedor-titulos {
+    display: flex;
+   
+    flex-direction: column;
+    align-items: center;
+}
+
+.lista-titulos {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.accordion-button{
+    width: 100%;
+}
+
+.contenedor-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     height: 90%;
 
 }
-.lista-titulos{
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- margin: 1rem;
- padding: 1rem;
-}
 
-.titulo{
-    border: black solid 1px;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 15px;
-    cursor: pointer;
-}
-
-.contenedor-titulo{
-    width: 100%;
-}
-
-.modal-secundario-texto{
-    height: 90vh;
-}
-
-.contenedor-texto{
+.contenedor-texto {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.texto{
+.texto {
     padding: 4rem;
     margin: 2rem;
     font-size: 1.5rem;
 }
-.titulo-texto{
+
+.titulo-texto {
     font-size: 2rem;
 }
 
-.mayus{
+.mayus {
     text-transform: uppercase;
 }
 
+.container-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70%;
+
+}
+
+.btn-edad {
+    margin-top: 2rem;
+    width: 180px;
+    height: 50px;
+    background-color: #b851a0;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.titulo {
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    width: 80%;
+}
+
+
+.container-btn-comenzar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ocultar {
+    display: none;
+}
+
+.img-volver {
+    width: 3rem;
+    cursor: pointer;
+}
+
+/*display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;*/
+
 @media (max-width: 768px) {
-    .menu-botones{
-        border: 2px black solid;
+    .menu-botones {
+        border: none;
         border-radius: 15px;
         background-color: whitesmoke;
         width: 90%;
-        height: 50%;
+        height: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
     }
-    .modal-general-texto{
+
+    .modal-general-texto {
         width: 100%;
         height: 90%;
 
     }
 
-    .titulo{
-        border: black solid 1px;
+    .modal-secundario-texto {
         width: 100%;
-        padding: 0.5rem;
+        height: 90%;
+
+    }
+
+    .titulo {
+        width: 100%;
         text-align: center;
-        border-radius: 15px;
+        border: none;
         cursor: pointer;
     }
 
-    .lista-titulos{
+    .lista-titulos {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 1rem;
-        padding: 0.5rem;
-       }
-    
+
+    }
+
+
+    .contenedor-titulo {
+        width: 90%;
+    }
+
+    .contenedor-texto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .texto {
+        padding: 0.2rem;
+        margin: 0.2rem;
+        font-size: 1rem;
+    }
 
 }

@@ -1,10 +1,9 @@
-import { text_64, text_90, text_110, text_130 } from './resources.js'
+import { a_6_8, a_8_10, a_10_12 } from './resources.js'
 
 const modal_general = document.getElementById('modal-general-texto');
 const modal_texto = document.getElementById('modal-secundario-texto');
 const btn_cerrar_titulos = document.getElementById('cerrar-modal-principal');
 const btn_cerrar_texto = document.getElementById('cerrar-modal-secundario');
-const audio = document.getElementById('audio');
 const downloadLink = document.getElementById('downloadLink');
 
 btn_cerrar_titulos.addEventListener('click', () => {
@@ -14,16 +13,13 @@ btn_cerrar_titulos.addEventListener('click', () => {
 btn_cerrar_texto.addEventListener('click', () => {
     modal_texto.close();
 })
-
-
-
+let hora_inicio = 0;
+let hora_fin = 0;
+let tiempo = 0;
 let puede_grabar = false;
 let grabando = false;
 let grabacion = null;
 let chunks = [];
-
-
-
 
 setupAudio()
 
@@ -41,6 +37,8 @@ function SetupStream(stream) {
         const audioURL = window.URL.createObjectURL(blob);
         console.log(audioURL)
         //audio.src = audioURL;
+        //new Date().toLocaleString()
+        downloadLink.download = `audio_${new Date().toLocaleString()}.mp3`;
         downloadLink.href = audioURL;
         downloadLink.style.display = 'block';
     }
@@ -59,7 +57,6 @@ function setupAudio() {
     puede_grabar = true;
 }
 
-
 function grabar() {
     if (!puede_grabar) return;
     grabando = !grabando;
@@ -67,87 +64,107 @@ function grabar() {
     if (grabando) {
         console.log('grabando')
         grabacion.start();
+        document.getElementById('btn-comienzo').classList.remove('btn-success');
+        document.getElementById('btn-comienzo').classList.add('btn-danger');
+        document.getElementById('btn-comienzo').innerText = 'Detener';
+        hora_inicio = Date.now();
 
-        setTimeout(() => {
-            grabacion.stop();
-            console.log('deteniendo')
-        }, 3000);
-        setTimeout(() => {
-            console.log('descargando')
-            downloadLink.download = 'prueba.mp3'
-        }, 7000);
+
     } else {
-        //grabacion.stop();
-        //cambiar btn a brabar
+        grabacion.stop();
+        grabando = !grabando;
+        console.log('deteniendo')
+        document.getElementById('btn-comienzo').classList.remove('btn-danger');
+        document.getElementById('btn-comienzo').classList.add('btn-success');
+        document.getElementById('btn-comienzo').innerText = 'Comenzar';
+
+        hora_fin = Date.now();
+
+        //tiempo = ((Math.round(hora_fin - hora_inicio))/1000)/60;
+        tiempo = ((Math.round(hora_fin - hora_inicio)) / 1000);
+        console.log(tiempo)
+        tiempo = 0;
+
     }
 }
 
+//onclick="renderizarTexto('${data[0].cuentos[0].titulo}', '${data[0].cuentos[0].texto}')"
 
-
-
-function plantillaTitulo(data) {
-    let plantilla = `
-    <div class="container">
-    <p id="titulo-${data.id}" class="titulo">${data.titulo}</p>
-    </div>
-    `
-    return plantilla;
-}
-
-
-function plantillaTexto(data) {
-    let plantilla = `
-    <div class="container contenedor-texto">
-    <h4 id="titulo-texto-${data.id}" class="titulo-texto">${data.titulo}</h4>
-    <p id="texto-${data.id}" class="texto">${data.contenido}</p>
-    </div>
-    `
-    return plantilla;
-}
-
-
-function renderizarTexto(data) {
+/*function renderizarTexto(titulo, texto) {
     let contenedor = document.getElementById('contenedor-texto');
     contenedor.innerHTML = '';
-    contenedor.innerHTML = plantillaTexto(data);
+    contenedor.innerHTML = `
+    <div class="container contenedor-texto">
+    <h4  class="titulo-texto">${titulo}</h4>
+    <p  class="texto">${texto}</p>
+    </div>
+    `
     modal_texto.showModal();
-}
+}*/
 
 
-function renderizarTitulos(dataList) {
+
+/*function plantillaTexto(data) {
+    let plantilla = `
+    <div class="container contenedor-texto">
+    <h4  class="titulo-texto">${data.titulo}</h4>
+    <p  class="texto">${data.cuento}</p>
+    </div>
+    `
+    return plantilla;
+}*/
+
+function renderizarNivel6a8(data) {
     let contenedor = document.getElementById('contenedor-titulos');
     contenedor.innerHTML = '';
-    dataList.forEach(data => {
-        let div = document.createElement('div');
-        div.classList.add('contenedor-titulo')
-        div.innerHTML = plantillaTitulo(data);
-        contenedor.append(div);
-        document.getElementById('titulo-' + data.id).addEventListener('click', () => {
-            renderizarTexto(data);
-        });
-    });
+    let div = document.createElement('div');
+    div.classList.add('contenedor-titulo')
+    div.innerHTML = plantillaNiveles6_8(data);
+    contenedor.append(div);
 
     modal_general.showModal();
 }
 
-document.getElementById('btn-64').addEventListener('click', () => {
-    renderizarTitulos(text_64);
+function renderizarNivel8a10(data) {
+    let contenedor = document.getElementById('contenedor-titulos');
+    contenedor.innerHTML = '';
+    let div = document.createElement('div');
+    div.classList.add('contenedor-titulo')
+    div.innerHTML = plantillaNiveles8_10(data);
+    contenedor.append(div);
+
+    modal_general.showModal();
+}
+
+function renderizarNivel10a12(data) {
+    let contenedor = document.getElementById('contenedor-titulos');
+    contenedor.innerHTML = '';
+    let div = document.createElement('div');
+    div.classList.add('contenedor-titulo')
+    div.innerHTML = plantillaNiveles10_12(data);
+    contenedor.append(div);
+
+    modal_general.showModal();
+}
+
+
+
+document.getElementById('a_6_8').addEventListener('click', () => {
+    renderizarNivel6a8(a_6_8);
 })
 
-document.getElementById('btn-90').addEventListener('click', () => {
-    renderizarTitulos(text_90);
+document.getElementById('a_8_10').addEventListener('click', () => {
+    renderizarNivel8a10(a_8_10);
 })
 
-document.getElementById('btn-110').addEventListener('click', () => {
-    renderizarTitulos(text_110);
-})
-
-document.getElementById('btn-130').addEventListener('click', () => {
-    renderizarTitulos(text_130);
+document.getElementById('a_10_12').addEventListener('click', () => {
+    renderizarNivel10a12(a_10_12);
 })
 
 document.getElementById('btn-comienzo').addEventListener('click', () => {
-    console.log('click')
+    console.log('grabar')
     grabar()
 })
 
+
+console.log(a_6_8[0].cuentos[0])
