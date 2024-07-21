@@ -14,48 +14,288 @@
 
 <body>
 
+    <!--------------------- MENU PRINCIPAL -------------------------------------------------------------------------->
     <div class="contenedor-principal container-fluid">
 
         <div class="menu-botones">
-            <div>
-                <h4 class="titulo-menu">Selecciona tu edad</h4>
-            </div>
-            <div class="container container-btn">
-                <button id="a_6_8" class=" btn-edad">6 a 8 años</button>
-                <button id="a_8_10" class=" btn-edad">8 a 10 años</button>
-                <button id="a_10_12" class=" btn-edad">10 a 12 años</button>
-            </div>
 
+            <div id="contenedor-edad-6-8" class="lista-btn-edad">
+
+                <div id="btn-edad-6-8" class="contenedor-nivel">
+                    <div id="btn-nivel-1-6-8">
+                        <p class="texto-nivel">De 6 a 8 anios</p>
+                    </div>
+                </div>
+
+                <div id="btn-edad-8-10" class="contenedor-nivel">
+                    <div id="btn-nivel-2-6-8">
+                        <p class="texto-nivel">De 8 a 10 anios</p>
+                    </div>
+                </div>
+
+                <div id="btn-edad-10-12" class="contenedor-nivel">
+                    <div id="btn-nivel-3-6-8">
+                        <p class="texto-nivel">De 10 a 12 anios</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <dialog class="modal-general-texto container-fluid" id="modal-general-texto">
 
-            <div class="container">
-                <img src="./img/left_icon.png" id="cerrar-modal-principal" class="img-volver">
 
+        <!--------------------- MODAL DE 6 A 8 ANIOS  -------------------------------------------------------------------------->
+
+        <dialog class="modal-nivel container-fluid" id="modal-nivel-6-8">
+
+            <div class="container contenedor-btn-volver">
+                <img src="./img/left_icon.png" id="cerrar-modal-nivel-6-8" class="img-volver">
             </div>
 
-            <div id="contenedor-titulos" class="lista-titulos">
+            <div id="nivel-6-8" class="lista-niveles">
+                <div id="contenedor-nivel-1-6-8" class="contenedor-nivel">
+                    <div id="btn-nivel-1-6-8">
+                        <p class="texto-nivel">Nivel de dificultad 1</p>
+                    </div>
+                </div>
+                <div id="cuentos-nivel-1-6-8" class="listado-titulos ocultar ">
+                    <div class="contenedor-titulos-cuentos">
+                        <div id="cuento-1-6-8-1" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La paloma y la mula</p>
+                        </div>
+                        <div id="cuento-1-6-8-2" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El monito Tadeo</p>
+                        </div>
+                        <div id="cuento-1-6-8-3" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La perrita Canela</p>
+                        </div>
+                        <div id="cuento-1-6-8-4" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La visita al zoológico</p>
+                        </div>
+                    </div>
+                </div>
 
+                <div id="contenedor-nivel-2-6-8" class="contenedor-nivel">
+                    <div id="btn-nivel-2-6-8">
+                        <p class="texto-nivel">Nivel de dificultad 2</p>
+                    </div>
+                </div>
+                <div id="cuentos-nivel-2-6-8" class="listado-titulos ocultar">
+                    <div class="contenedor-titulos-cuentos">
+                        <div id="cuento-2-6-8-1" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La gata Mimí</p>
+                        </div>
+                        <div id="cuento-2-6-8-2" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La paloma y la hormiga</p>
+                        </div>
+                        <div id="cuento-2-6-8-3" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La oveja y el lobo</p>
+                        </div>
+                        <div id="cuento-2-6-8-4" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El pececito curioso</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contenedor-nivel-3-6-8" class="contenedor-nivel">
+                    <div id="btn-nivel-3-6-8">
+                        <p class="texto-nivel">Nivel de dificultad 3</p>
+                    </div>
+                </div>
+                <div id="cuentos-nivel-3-6-8" class="listado-titulos ocultar">
+                    <div class="contenedor-titulos-cuentos">
+                        <div id="cuento-3-6-8-1" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El cóndor de los Andes</p>
+                        </div>
+                        <div id="cuento-3-6-8-2" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El campesino y la mata de espinas</p>
+                        </div>
+                        <div id="cuento-3-6-8-3" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La ranita que quería ser como el buey</p>
+                        </div>
+                        <div id="cuento-3-6-8-4" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">¿Cómo se contaba en la Antigüedad?</p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-
-
         </dialog>
 
-        <dialog class="modal-secundario-texto" id="modal-secundario-texto">
+        <!--------------------- MODAL DE 8 A 10 ANIOS -------------------------------------------------------------------------->
+
+        <dialog class="modal-nivel container-fluid" id="modal-nivel-8-10">
+
+            <div class="container contenedor-btn-volver">
+                <img src="./img/left_icon.png" id="cerrar-modal-nivel-8-10" class="img-volver">
+            </div>
+
+            <div id="nivel-6-8" class="lista-niveles">
+                <div id="contenedor-nivel-1-8-10" class="contenedor-nivel">
+                    <div id="btn-nivel-1-8-10">
+                        <p class="texto-nivel">Nivel de dificultad 1</p>
+                    </div>
+                </div>
+                <div id="cuentos-nivel-1-8-10" class="listado-titulos ocultar">
+                    <div class="contenedor-titulos-cuentos">
+                        <div id="cuento-1-8-10-1" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El cóndor de los Andes</p>
+                        </div>
+                        <div id="cuento-1-8-10-2" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El campesino y la mata de espinas</p>
+                        </div>
+                        <div id="cuento-1-8-10-3" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La ranita que quería ser como el buey</p>
+                        </div>
+                        <div id="cuento-1-8-10-4" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">¿Cómo se contaba en la Antigüedad?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contenedor-nivel-2-8-10" class="contenedor-nivel">
+                    <div id="btn-nivel-2-8-10">
+                        <p class="texto-nivel">Nivel de dificultad 2</p>
+                    </div>
+                </div>
+                <div id="cuentos-nivel-2-8-10" class="listado-titulos ocultar">
+                    <div class="contenedor-titulos-cuentos">
+                        <div id="cuento-2-8-10-1" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">Un gran equipo</p>
+                        </div>
+                        <div id="cuento-2-8-10-2" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La princesa agradecida</p>
+                        </div>
+                        <div id="cuento-2-8-10-3" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La liebre y la zorra</p>
+                        </div>
+                        <div id="cuento-2-8-10-4" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">La señora Oscuridad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contenedor-nivel-3-8-10" class="contenedor-nivel">
+                    <div id="btn-nivel-3-8-10">
+                        <p class="texto-nivel">Nivel de dificultad 3</p>
+                    </div>
+                </div>
+                <div id="cuentos-nivel-3-8-10" class="listado-titulos ocultar">
+                    <div class="contenedor-titulos-cuentos">
+                        <div id="cuento-3-8-10-1" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El burro presumido</p>
+                        </div>
+                        <div id="cuento-3-8-10-2" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El zorro y las uvas</p>
+                        </div>
+                        <div id="cuento-3-8-10-3" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">Las cabras testarudas</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </dialog>
+
+        <!--------------------- MODAL DE 10 A 12 ANIOS -------------------------------------------------------------------------->
+
+        <dialog class="modal-nivel container-fluid" id="modal-nivel-10-12">
+
+            <div class="container contenedor-btn-volver">
+                <img src="./img/left_icon.png" id="cerrar-modal-nivel-10-12" class="img-volver">
+            </div>
+
+            <div id="nivel-10-12" class="lista-niveles">
+                <div id="contenedor-nivel-1-10-12" class="contenedor-nivel">
+                    <div id="btn-nivel-1-10-12">
+                        <p class="texto-nivel">Nivel de dificultad 1</p>
+                    </div>
+                </div>
+                <div id="cuentos-nivel-1-10-12" class="listado-titulos ocultar ">
+                    <div class="contenedor-titulos-cuentos">
+                        <div id="cuento-1-10-12-1" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El burro presumido</p>
+                        </div>
+                        <div id="cuento-1-10-12-2" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El zorro y las uvas</p>
+                        </div>
+                        <div id="cuento-1-10-12-3" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">Las cabras testarudas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contenedor-nivel-2-10-12" class="contenedor-nivel">
+                    <div id="btn-nivel-2-10-12">
+                        <p class="texto-nivel">Nivel de dificultad 2</p>
+                    </div>
+                </div>
+                <div id="cuentos-nivel-2-10-12" class="listado-titulos ocultar">
+                    <div class="contenedor-titulos-cuentos">
+                        <div id="cuento-2-10-12-1" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El Viejito Corazón de Manzana</p>
+                        </div>
+                        <div id="cuento-2-10-12-2" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">¡Cuidemos nuestros árboles!</p>
+                        </div>
+                        <div id="cuento-2-10-12-3" class="container btn-cuento-titulo">
+                            <p class="p-titulo-cuento">El cuervo y la jarra</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+
+
+
+        <!--------------------- MODAL DE CUENTOS -------------------------------------------------------------------------->
+
+
+        <dialog class="modal-texto-cuento modal-nivel" id="modal-texto-cuento">
             <div class="container">
                 <img src="./img/left_icon.png" id="cerrar-modal-secundario" class="img-volver">
             </div>
 
-            <div id="contenedor-texto" class="lista-texto">
-
+            <div id="contenedor-cuento" class="contenedor-cuento">
+                <div class="contenendor-titulo-cuento">
+                    <p class="titulo-mobile" id="titulo-cuento"></p>
+                </div>
+                <div class="contenendor-texto-cuento">
+                    <p calss="cuento-mobile" id="texto-cuento"></p>
+                </div>
             </div>
 
             <div id="container-btn-comenzar" class="container-btn-comenzar">
-
                 <button id="btn-comienzo" class="btn btn-success">Comenzar</button>
-                <a id="downloadLink" href="" download="" style="display:none;">Descargar Grabación</a>
+            </div>
+
+        </dialog>
+
+        <!--------------------- MODAL DE METRICAS -------------------------------------------------------------------------->
+
+        <dialog class="modal-metrica modal-nivel" id="modal-metrica">
+
+            <div id="contenedor-cuento" class="contenedor-cuento contenedor-metricas">
+                <div class="contenendor-metrica">
+                    <p class="metrica-mobile" id="titulo-tiempo">Cantidad de palabras en el cuento: </p>
+                    <p class="metrica-mobile" id="palabras-cuento"></p>
+                </div>
+                <div class="contenendor-metrica">
+                    <p class="metrica-mobile" id="titulo-tiempo">Tiempo de lectura: </p>
+                    <p class="metrica-mobile" id="minutos"></p>
+
+                </div>
+                <div class="contenendor-metrica">
+                    <p class="metrica-mobile" id="titulo-palabras">Palabras leidas por minuto: </p>
+                    <p class="metrica-mobile" id="cantidad-palabras"></p>
+                </div>
+            </div>
+
+            <div id="container-btn-metrica" class="container-btn-metrica">
+                <a id="downloadLink" href="" download="" class="btn btn-warning">Descargar
+                    grabación</a>
+                <button id="btn-reiniciar" class="btn btn-success">Reiniciar</button>
+
             </div>
 
         </dialog>
