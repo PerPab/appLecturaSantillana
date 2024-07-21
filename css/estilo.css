@@ -315,8 +315,14 @@ p {
     .menu-botones{
         width: 80%;
         height: 80%;
+        
     }
 
+    .contenedor-principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
-    
 }
