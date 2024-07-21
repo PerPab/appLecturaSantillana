@@ -44,7 +44,7 @@ p {
 
 .menu-botones {
     border: none;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: white;
     width: 80%;
     height: 90%;
@@ -83,10 +83,12 @@ p {
     margin: 0.5rem;
     cursor: pointer;
     transition: transform 0.3s ease; 
+    border-radius: 5px;
 }
 
 .contenedor-nivel:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
+    border-radius: 5px; 
 }
 
 
@@ -104,7 +106,7 @@ p {
 
 .modal-nivel{
     border: none;
-    border-radius: 15px;
+    border-radius: 5px;
     width: 80%;
     height: 90%;
 }
@@ -146,6 +148,7 @@ p {
     color: white;
     cursor: pointer;
     transition: transform 0.3s ease; 
+    border-radius: 5px;
 }
 
 .p-titulo-cuento{
@@ -154,6 +157,7 @@ p {
 
 .btn-cuento-titulo:hover {
     transform: scale(1.05); 
+    border-radius: 5px;
 }
 .contenedor-cuento{
     margin-top: 1rem;
@@ -187,19 +191,22 @@ p {
     justify-content: flex-start;
     width: 50%;
     margin: 0.5rem;
-    border: #4E58A5 solid 2px;
+    border: #4E58A5 solid 3px;
     padding: 1rem;
+    border-radius: 5px;
 }
 .container-btn-metrica{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+ 
 }
 
 .contenedor-metricas{
     align-items: center;
     justify-content: center;
+  
 }
 
 .btn{
@@ -256,13 +263,13 @@ p {
 
 @media only screen and (max-width: 850px) {
     .contenedor-nivel{
-        width: 100%;
+        width: 80%;
         height: 50px;
         margin: 0.3rem;
-        margin-top: 1rem;
     }
     .modal-nivel {
         width: 100%;
+        margin-top: 1rem;
         height: 90%;
     }
 
@@ -282,11 +289,13 @@ p {
     .btn{
         width: 60%;
         margin: 0.3rem;
+        border-radius: 5px;
     }
 
     .contenendor-metrica{
         width: 100%;
         padding: 0.3rem;
+        border-radius: 5px;
     }
     .metrica-mobile{
         font-size: 14px;
@@ -318,8 +327,5 @@ p {
         
     }
 
-    .contenedor-principal {
-    
-    }
 
 }
